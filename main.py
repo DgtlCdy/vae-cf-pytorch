@@ -12,7 +12,7 @@ import data
 import metric
 
 parser = argparse.ArgumentParser(description='PyTorch Variational Autoencoders for Collaborative Filtering')
-parser.add_argument('--data', type=str, default='ml-20m',
+parser.add_argument('--data', type=str, default='C:/codes/vae-cf-pytorch/dataset/ml-20m',
                     help='Movielens-20m dataset location')
 parser.add_argument('--lr', type=float, default=1e-4,
                     help='initial learning rate')
@@ -28,7 +28,7 @@ parser.add_argument('--anneal_cap', type=float, default=0.2,
                     help='largest annealing parameter')
 parser.add_argument('--seed', type=int, default=1111,
                     help='random seed')
-parser.add_argument('--cuda', action='store_true',
+parser.add_argument('--cuda', action='store_true', default=True,
                     help='use CUDA')
 parser.add_argument('--log-interval', type=int, default=100, metavar='N',
                     help='report interval')

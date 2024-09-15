@@ -103,9 +103,9 @@ class MultiVAE(nn.Module):
         if self.training:
             std = torch.exp(0.5 * logvar)
             eps = torch.randn_like(std)
-            return eps.mul(std).add_(mu)
+            return eps.mul(std).add_(mu) # 训练的时候，按mu和logvar的高斯分布取一个随机数
         else:
-            return mu
+            return mu # 测试的时候直接取峰值
     
     def decode(self, z):
         h = z
